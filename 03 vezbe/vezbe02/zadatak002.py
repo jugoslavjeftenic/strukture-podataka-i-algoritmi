@@ -1,21 +1,24 @@
-import os; os.system("cls")
+import os
 
-def moj_sort(lista):
-    nesortirano = lista
-    sortirano = []
+os.system("cls")
 
-    while nesortirano != []:
-        najmanji = nesortirano[0]
 
-        for n in range(1, len(nesortirano)):
-            if najmanji > nesortirano[n]:
-                najmanji = nesortirano[n]
+def selection_sort(lista):
+    sortirana_lista = []
 
-        sortirano.append(najmanji)
-        nesortirano.remove(najmanji)
+    while lista != []:
+        najmanji = lista[0]
 
-    return sortirano
+        for n in range(1, len(lista)):
+            if najmanji > lista[n]:
+                najmanji = lista[n]
 
-lista = [5, 6, 3, 2, 7, 0]
+        sortirana_lista.append(najmanji)
+        lista.remove(najmanji)
+
+    return sortirana_lista
+
+
+lista = [5, 6, 3, 2, 7, 0, 4]
 print(lista)
-print(moj_sort(lista))
+print(selection_sort(lista))
